@@ -10,8 +10,8 @@ import { Subscription } from "rxjs";
 })
 export class AppareilViewComponent implements OnInit {
 
-  appareils : any[];
-  appareilsSubscription : Subscription;
+  appareils: any[];
+  appareilsSubscription: Subscription;
 
   isAuth: boolean = false;
 
@@ -44,4 +44,13 @@ export class AppareilViewComponent implements OnInit {
       return null;
     }
   }
+
+  onSave() {
+    this.appareilService.saveAppareilsToServer();
+  }
+
+  onFetch() {
+    this.appareilService.getAppareilsFromServer();
+  }
+
 }
